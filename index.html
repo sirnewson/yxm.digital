@@ -8,18 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <style>
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background-color: #0B0D0E; /* Charcoal */
             color: #F6F7F9; /* Cloud */
             overflow-x: hidden;
         }
-        .font-serif { font-family: 'Raleway', sans-serif; font-weight: 800; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
         .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
         .aurora-layer { position: absolute; width: 200%; height: 200%; opacity: 0.15; mix-blend-mode: screen; animation: move-aurora 40s linear infinite; }
         .aurora-layer-1 { background: radial-gradient(circle, #0E8A6A 0%, transparent 50%); top: -50%; left: -50%; }
@@ -77,7 +77,7 @@
                     <a href="#home" class="top-nav-link nav-button" data-page="home">Home</a>
                     <a href="#tools" class="top-nav-link nav-button" data-page="tools">Tools Universe</a>
                     <a href="#solutions" class="top-nav-link nav-button" data-page="solutions">Solutions</a>
-                    <a href="#learn" class="top-nav-link nav-button" data-page="learn">Learn & Earn</a>
+                    <a href="#about" class="top-nav-link nav-button" data-page="about">About Us</a>
                 </div>
                 <a href="#" class="hidden md:inline-block bg-rich_green text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-300" style="background-color: #0E8A6A;">Get Started</a>
             </nav>
@@ -89,13 +89,13 @@
             <section id="home" class="page-section">
                 <div class="min-h-screen flex items-center justify-center">
                     <div class="container-box text-center p-8 md:p-16">
-                        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white">From Spark To Scale.<br><span class="text-gradient">Instantly.</span></h1>
+                        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white">From Spark To Scale.<br><span class="text-gradient">Instantly.</span></h1>
                         <p class="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-gray-400">An intelligent ecosystem of AI tools that transforms creative friction into effortless flow.</p>
                     </div>
                 </div>
                 <!-- Creative Flow Section -->
                 <div id="creative-flow" class="py-32 md:py-40">
-                    <div class="text-center mb-20"><h2 class="font-serif text-4xl md:text-6xl tracking-tight">Your New Creative Workflow.</h2><p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Watch an idea evolve through the YXM ecosystem. No friction. Just flow.</p></div>
+                    <div class="text-center mb-20"><h2 class="font-display text-4xl md:text-6xl tracking-tight">Your New Creative Workflow.</h2><p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Watch an idea evolve through the YXM ecosystem. No friction. Just flow.</p></div>
                     <div class="space-y-8">
                         <!-- Flow steps would be here -->
                     </div>
@@ -105,20 +105,20 @@
             <!-- PAGE: Tools Universe -->
             <section id="tools" class="page-section">
                 <div class="text-center mb-12 pt-16">
-                    <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white">The AI Tools Universe</h1>
+                    <h1 class="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white">The AI Tools Universe</h1>
                     <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-400">"FutureTools Collects & Organizes All The Best AI Tools So YOU Too Can Become Superhuman!"</p>
                 </div>
                 
                 <!-- Featured Tools -->
                 <div class="mb-20">
-                    <h2 class="font-serif text-3xl md:text-4xl tracking-tight mb-8">Featured Tools</h2>
+                    <h2 class="font-display text-3xl md:text-4xl tracking-tight mb-8">Featured Tools</h2>
                     <div id="featuredToolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Featured tool cards will be dynamically inserted here -->
                     </div>
                 </div>
 
                 <div class="container-box p-6 mb-12 sticky top-24 z-40">
-                    <input type="search" id="searchInput" placeholder="Search all tools... (e.g., 'video', 'code')" class="w-full bg-charcoal/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                    <input type="search" id="searchInput" placeholder="Search all tools... (e.g., 'video', 'code')" class="w-full bg-gray-200 border border-transparent rounded-lg px-4 py-3 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-600">
                     <details class="mt-4"><summary class="cursor-pointer text-gray-400 hover:text-white">Filter by Category</summary><div id="categoryFilters" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 text-sm"></div></details>
                 </div>
                 <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -129,39 +129,85 @@
             <section id="solutions" class="page-section">
                  <div class="min-h-screen flex items-center justify-center">
                     <div class="container-box text-center p-8 md:p-16">
-                        <h1 class="font-serif text-4xl md:text-6xl tracking-tight">Have a problem? <br>We'll <span class="text-gradient">digitize a solution.</span></h1>
+                        <h1 class="font-display text-4xl md:text-6xl tracking-tight">Have a problem? <br>We'll <span class="text-gradient">digitize a solution.</span></h1>
                         <p class="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-gray-400">From automating inventory in Nairobi to creating a content engine in Lagos, we build custom AI-powered digital tools that solve real-world industry problems.</p>
                         <div class="mt-12"><a href="#" class="bg-emerald-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 text-lg inline-block transform hover:scale-105">Share Your Challenge</a></div>
                     </div>
                 </div>
-            </section>
-
-            <!-- PAGE: Learn & Earn -->
-            <section id="learn" class="page-section">
-                <div class="text-center mb-20 pt-16"><h1 class="font-serif text-4xl md:text-6xl tracking-tight">Learn & Earn with AI</h1><p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Master the tools of tomorrow. Join our classes, read our insights, and connect with experts.</p></div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="container-box p-8 lg:col-span-3"><h3 class="font-serif text-3xl mb-6">From The Blog</h3><div class="space-y-6">
-                        <div class="border-b border-gray-800 pb-4"><h4 class="font-semibold text-white">The Lean AI Startup: Scaling in Africa</h4><p class="text-sm text-gray-400 mt-1">How entrepreneurs are leveraging simple AI tools for massive value.</p></div>
-                        <div class="border-b border-gray-800 pb-4"><h4 class="font-semibold text-white">Practical AI for Your Small Business</h4><p class="text-sm text-gray-400 mt-1">Five real-world use cases you can implement today.</p></div>
-                        <div class="border-b border-gray-800 pb-4"><h4 class="font-semibold text-white">AI in Education: A New Frontier</h4><p class="text-sm text-gray-400 mt-1">Exploring how AI is reshaping learning and teaching.</p></div>
-                        <div class="border-b border-gray-800 pb-4"><h4 class="font-semibold text-white">The Ethics of AI: A Conversation</h4><p class="text-sm text-gray-400 mt-1">Navigating the moral landscape of artificial intelligence.</p></div>
-                        <div class="border-b border-gray-800 pb-4"><h4 class="font-semibold text-white">From Prompt to Profit</h4><p class="text-sm text-gray-400 mt-1">Monetizing your skills in the new AI economy.</p></div>
-                        <div><h4 class="font-semibold text-white">Demystifying LLMs</h4><p class="text-sm text-gray-400 mt-1">A beginner's guide to Large Language Models.</p></div>
-                    </div></div>
-                    <div class="container-box p-8 lg:col-span-3"><h3 class="font-serif text-3xl mb-6">AI Coaching</h3><p class="text-gray-400 mb-6">Book a one-on-one session with our experts to digitize your workflow.</p><a href="#" class="bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 inline-block">Book a Session</a></div>
+                
+                <!-- Brands Worked With -->
+                <div class="py-20">
+                    <h3 class="text-center text-gray-400 font-semibold uppercase tracking-widest mb-8">Trusted by Industry Leaders</h3>
+                    <div class="flex justify-center items-center gap-12 flex-wrap">
+                        <img src="https://i.ibb.co/whjz8P5V/Asset-2.png" alt="BIOS Studios Logo" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
+                        <img src="https://static.wixstatic.com/media/3fe310_c65407ca100d47cbbdd9c5226611b8ec~mv2.png/v1/crop/x_3,y_0,w_408,h_272/fill/w_106,h_71,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Asset%204.png" alt="Partner Logo 1" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
+                        <img src="https://www.mitacs.ca/wp-content/uploads/2023/11/Mitacs_logo_white.png" alt="Mitacs Logo" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/2560px-Google_Gemini_logo.svg.png" alt="Google Gemini Logo" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                    </div>
                 </div>
+
                  <!-- YXM Tools Showcase -->
                 <div class="py-32 md:py-40">
-                    <div class="text-center mb-20"><h2 class="font-serif text-4xl md:text-6xl tracking-tight">The YXM Digital Toolkit</h2><p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Our own suite of minimal, powerful tools designed to work in perfect harmony.</p></div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                        <div class="container-box"><div class="p-6 border-b border-gray-700/50"><h3 class="font-serif text-2xl">quote.yxm.digital</h3><p class="text-gray-400">AI Content & Copy Generator</p></div><div class="p-8 min-h-[200px] flex items-center justify-center"><p class="text-center text-gray-500">Live app preview coming soon.</p></div><div class="p-6 bg-black/20 rounded-b-2xl"><a href="#" class="text-emerald-500 font-semibold hover:text-emerald-400 transition-colors">Launch App &rarr;</a></div></div>
-                        <div class="container-box"><div class="p-6 border-b border-gray-700/50"><h3 class="font-serif text-2xl">breath.yxm.digital</h3><p class="text-gray-400">AI-Powered Mindfulness & Focus</p></div><div class="p-8 min-h-[200px] flex items-center justify-center"><p class="text-center text-gray-500">Live app preview coming soon.</p></div><div class="p-6 bg-black/20 rounded-b-2xl"><a href="#" class="text-emerald-500 font-semibold hover:text-emerald-400 transition-colors">Launch App &rarr;</a></div></div>
+                    <div class="text-center mb-20"><h2 class="font-display text-4xl md:text-6xl tracking-tight">The YXM Digital Toolkit</h2><p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Our own suite of minimal, powerful tools designed to work in perfect harmony.</p></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        
+                        <!-- Tool Card: Quote -->
+                        <a href="https://quote.yxm.digital" target="_blank" rel="noopener noreferrer" class="group container-box p-8 flex items-center space-x-6 hover:bg-white/5 transition-all duration-300">
+                            <div class="bg-emerald-900/50 p-4 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                            <div><h3 class="font-display text-2xl text-white">quote.yxm.digital</h3><p class="text-gray-400">AI Content & Copy Generator</p></div>
+                        </a>
+
+                        <!-- Tool Card: Loop -->
+                        <a href="https://loop.yxm.digital" target="_blank" rel="noopener noreferrer" class="group container-box p-8 flex items-center space-x-6 hover:bg-white/5 transition-all duration-300">
+                            <div class="bg-emerald-900/50 p-4 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                            <div><h3 class="font-display text-2xl text-white">loop.yxm.digital</h3><p class="text-gray-400">AI-Powered Video Loops</p></div>
+                        </a>
+
+                        <!-- Tool Card: Thumbnail -->
+                        <a href="https://thumbnail.yxm.digital" target="_blank" rel="noopener noreferrer" class="group container-box p-8 flex items-center space-x-6 hover:bg-white/5 transition-all duration-300">
+                             <div class="bg-emerald-900/50 p-4 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
+                            <div><h3 class="font-display text-2xl text-white">thumbnail.yxm.digital</h3><p class="text-gray-400">AI Thumbnail Generator</p></div>
+                        </a>
+
+                        <!-- Tool Card: Clock -->
+                        <a href="https://clock.yxm.digital" target="_blank" rel="noopener noreferrer" class="group container-box p-8 flex items-center space-x-6 hover:bg-white/5 transition-all duration-300">
+                             <div class="bg-emerald-900/50 p-4 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                            <div><h3 class="font-display text-2xl text-white">clock.yxm.digital</h3><p class="text-gray-400">AI Smart Productivity Clock</p></div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE: About Us -->
+            <section id="about" class="page-section">
+                <div class="pt-16">
+                    <div class="text-center">
+                        <h1 class="font-display text-4xl md:text-6xl tracking-tight">We build the future, today.</h1>
+                        <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">YXM Digital is the product ecosystem of BIOS Studios — a modern tech agency fully adaptive in the Tech & AI space.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 max-w-5xl mx-auto">
+                        <div class="container-box p-8">
+                            <h3 class="font-display text-3xl mb-4">Our Philosophy</h3>
+                            <p class="text-gray-400">We believe in clarity over complexity. In a world saturated with bloated software and confusing jargon, we build tools and solutions that are minimal, intuitive, and immensely powerful. Our focus is on removing friction, allowing creativity and productivity to flourish.</p>
+                        </div>
+                         <div class="container-box p-8">
+                            <h3 class="font-display text-3xl mb-4">The BIOS Engine</h3>
+                            <p class="text-gray-400">As an agency, BIOS Studios enhances marketing and branding for businesses by leveraging the same AI-powered, data-driven approach that powers the YXM toolkit. We don't just build technology; we integrate it to create scalable, impactful brand experiences.</p>
+                        </div>
+                    </div>
+                     <div class="mt-16 text-center">
+                        <a href="#" class="bg-emerald-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 text-lg inline-block transform hover:scale-105">Work With BIOS Studios</a>
                     </div>
                 </div>
             </section>
             
             <footer class="text-center py-8 text-gray-500 text-sm">
-                <p>YXM Digital From Bios Studios</p>
+                <div class="flex items-center justify-center space-x-2 mb-2">
+                    <p>YXM Digital From BIOS Studios</p>
+                    <img src="https://i.ibb.co/whjz8P5V/Asset-2.png" alt="BIOS Studios Logo" class="h-6">
+                </div>
                 <p>&copy; 2025 YXM Digital. All Rights Reserved. ✨</p>
             </footer>
 
@@ -173,7 +219,7 @@
             <a href="#home" data-page="home" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg><span class="text-xs font-medium">Home</span></a>
             <a href="#tools" data-page="tools" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span class="text-xs font-medium">Tools</span></a>
             <a href="#solutions" data-page="solutions" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg><span class="text-xs font-medium">Solutions</span></a>
-            <a href="#learn" data-page="learn" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20M12 14.75V20" /></svg><span class="text-xs font-medium">Learn</span></a>
+            <a href="#about" data-page="about" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-xs font-medium">About</span></a>
         </div>
     </nav>
 
@@ -270,7 +316,7 @@
                 card.target = '_blank';
                 card.rel = 'noopener noreferrer';
                 card.className = 'tool-gradient-card';
-                card.innerHTML = `<div class="tool-content"><h3 class="font-serif text-2xl text-white">${tool.name}</h3><p class="text-sm text-gray-400 mt-2 mb-4">${tool.description}</p><span class="text-xs font-semibold bg-emerald-900/50 text-emerald-400 py-1 px-3 rounded-full">${tool.category}</span></div>`;
+                card.innerHTML = `<div class="tool-content"><h3 class="font-display text-2xl text-white">${tool.name}</h3><p class="text-sm text-gray-400 mt-2 mb-4">${tool.description}</p><span class="text-xs font-semibold bg-emerald-900/50 text-emerald-400 py-1 px-3 rounded-full">${tool.category}</span></div>`;
                 return card;
             }
             
@@ -345,3 +391,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
