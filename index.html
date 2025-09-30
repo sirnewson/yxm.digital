@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YXM Digital - Affordable AI Tools & Digital Solutions | From Spark To Scale</title>
+    <title>YXM Digital - Best AI Tools Worldwide + YXM Tools | By Sir Newson</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="YXM Digital: Affordable AI-powered tools and digital solutions that solve real problems. Making technology accessible to businesses of all sizes. Free consultation available.">
+    <meta name="description" content="Discover the world's best AI tools and explore YXM Tools - powerful, easy-to-use digital solutions. Submit your challenge and get expert guidance from Sir Newson & BIOS Studios.">
     <meta name="keywords" content="AI tools, digital solutions, Nairobi Kenya, YXM Digital, artificial intelligence, content generation, thumbnail maker, data analysis, business automation, custom software development">
     <meta name="author" content="YXM Digital, BIOS Studios">
     <meta name="robots" content="index, follow">
@@ -69,38 +69,176 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <style>
+        :root {
+            /* Pure Dark Mode - Futuristic */
+            --color-bg: #000000;
+            --color-surface: #0a0a0f;
+            --color-text: #ffffff;
+
+            /* Vibrant Gradient Glows */
+            --glow-blue-start: #00d4ff;
+            --glow-blue-end: #0051ff;
+            --glow-red-start: #ff0844;
+            --glow-orange-end: #ff8c00;
+            --glow-yellow-start: #ffeb3b;
+            --glow-green-end: #00ff88;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background-color: #0B0D0E; /* Charcoal */
-            color: #F6F7F9; /* Cloud */
+            background: #000000;
+            color: var(--color-text);
             overflow-x: hidden;
+            line-height: 1.7;
         }
-        .font-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-        .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
-        .aurora-layer { position: absolute; width: 200%; height: 200%; opacity: 0.15; mix-blend-mode: screen; animation: move-aurora 40s linear infinite; }
-        .aurora-layer-1 { background: radial-gradient(circle, #0E8A6A 0%, transparent 50%); top: -50%; left: -50%; }
-        .aurora-layer-2 { background: radial-gradient(circle, #FF7A1A 0%, transparent 50%); bottom: -50%; right: -50%; animation-duration: 45s; animation-direction: reverse; }
-        @keyframes move-aurora { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(20%, -20%) rotate(180deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
-        
-        #hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        /* Futuristic Dark Background with Multiple Glows */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(0, 212, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(ellipse at 85% 80%, rgba(255, 8, 68, 0.12) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 235, 59, 0.08) 0%, transparent 40%),
+                #000000;
+        }
+
+        /* Floating Gradient Orbs */
+        .aurora-layer {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            opacity: 0.18;
+            filter: blur(120px);
+            animation: float-orb 25s ease-in-out infinite;
+        }
+
+        .aurora-layer-1 {
+            background: radial-gradient(circle, var(--glow-blue-start) 0%, transparent 65%);
+            top: 5%;
+            left: 5%;
+            animation-duration: 28s;
+        }
+
+        .aurora-layer-2 {
+            background: radial-gradient(circle, var(--glow-red-start) 0%, transparent 65%);
+            bottom: 10%;
+            right: 5%;
+            animation-duration: 32s;
+            animation-delay: -8s;
+        }
+
+        .aurora-layer-3 {
+            background: radial-gradient(circle, var(--glow-yellow-start) 0%, transparent 65%);
+            top: 45%;
+            left: 45%;
+            animation-duration: 38s;
+            animation-delay: -15s;
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(80px, -60px) scale(1.15) rotate(120deg); }
+            66% { transform: translate(-50px, 70px) scale(0.92) rotate(240deg); }
+        }
+
         .content-layer { position: relative; z-index: 2; }
-        .text-gradient { background: linear-gradient(90deg, #0E8A6A, #a7f3d0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        
+
+        /* Multiple Gradient Text Styles */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--glow-blue-start), var(--glow-yellow-start), var(--glow-red-start));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-flow 8s ease infinite;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(135deg, var(--glow-blue-start), var(--glow-blue-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-fire {
+            background: linear-gradient(135deg, var(--glow-red-start), var(--glow-orange-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-neon {
+            background: linear-gradient(135deg, var(--glow-yellow-start), var(--glow-green-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes gradient-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Futuristic Glass Container */
         .container-box {
-            background: rgba(246, 247, 249, 0.02);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(246, 247, 249, 0.1);
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
+            background: rgba(10, 10, 20, 0.75);
+            backdrop-filter: blur(40px) saturate(160%);
+            -webkit-backdrop-filter: blur(40px) saturate(160%);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2.5rem;
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06),
+                0 0 80px rgba(0, 212, 255, 0.05);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 2.5rem;
+            padding: 2px;
+            background: linear-gradient(135deg,
+                rgba(0, 212, 255, 0.4),
+                rgba(255, 235, 59, 0.4),
+                rgba(255, 8, 68, 0.4));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.6s ease;
         }
 
         .container-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-            border-color: rgba(14, 138, 106, 0.3);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow:
+                0 40px 100px rgba(0, 212, 255, 0.25),
+                0 0 120px rgba(255, 8, 68, 0.15),
+                0 0 150px rgba(255, 235, 59, 0.1);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .container-box:hover::before {
+            opacity: 1;
         }
 
         .floating-element {
@@ -164,9 +302,105 @@
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
+        /* Futuristic Logo */
+        .logo-glow {
+            filter:
+                drop-shadow(0 0 15px rgba(0, 212, 255, 0.6))
+                drop-shadow(0 0 30px rgba(255, 8, 68, 0.3));
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 4rem;
+            width: auto;
+        }
+
         .logo-glow:hover {
-            filter: drop-shadow(0 0 20px rgba(14, 138, 106, 0.6));
-            transition: filter 0.3s ease;
+            filter:
+                drop-shadow(0 0 25px rgba(0, 212, 255, 0.9))
+                drop-shadow(0 0 45px rgba(255, 235, 59, 0.5))
+                drop-shadow(0 0 60px rgba(255, 8, 68, 0.4));
+            transform: scale(1.08) translateY(-2px);
+        }
+
+        /* Futuristic Floating Header */
+        #main-header {
+            background: rgba(5, 5, 10, 0.85);
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            border: none;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 0 0 2rem 2rem;
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.7),
+                0 0 100px rgba(0, 212, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #main-header:hover {
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, 0.8),
+                0 0 150px rgba(0, 212, 255, 0.2),
+                0 0 100px rgba(255, 8, 68, 0.15);
+            border-bottom-color: rgba(0, 212, 255, 0.3);
+        }
+
+        /* Better Spacing */
+        .section-spacing {
+            padding: 6rem 0;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--glow-blue-start), var(--glow-yellow-start));
+            color: #000;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                0 10px 40px rgba(0, 212, 255, 0.4),
+                0 0 60px rgba(255, 235, 59, 0.3);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-center;
+        }
+
+        #scrollTopBtn.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        #scrollTopBtn:hover {
+            transform: scale(1.15) translateY(-3px);
+            box-shadow:
+                0 15px 60px rgba(0, 212, 255, 0.6),
+                0 0 80px rgba(255, 235, 59, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 4rem 0;
+            }
+
+            .logo-glow {
+                height: 2.5rem;
+            }
+
+            #scrollTopBtn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 20px;
+            }
         }
 
         .brand-pulse {
@@ -311,21 +545,29 @@
 </head>
 <body class="antialiased">
 
-    <div class="aurora-background"><div class="aurora-layer aurora-layer-1"></div><div class="aurora-layer aurora-layer-2"></div></div>
-    <canvas id="hero-canvas"></canvas>
+    <!-- Futuristic Background with 3 Gradient Orbs -->
+    <div class="aurora-background">
+        <div class="aurora-layer aurora-layer-1"></div>
+        <div class="aurora-layer aurora-layer-2"></div>
+        <div class="aurora-layer aurora-layer-3"></div>
+    </div>
 
     <div class="content-layer">
-        <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-charcoal/80 backdrop-blur-lg border-b border-gray-800">
-            <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
-                <img class="h-10 w-auto logo-glow" src="https://i.ibb.co/XkKKnhY7/elogo.png" alt="YXM Digital Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x40/0B0D0E/ffffff?text=YXM';">
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="top-nav-link nav-button" data-page="home">Home</a>
-                    <a href="#yxm-tools" class="top-nav-link nav-button" data-page="yxm-tools">YXM Tools</a>
-                    <a href="#tools" class="top-nav-link nav-button" data-page="tools">AI Tools Universe</a>
-                    <a href="#solutions" class="top-nav-link nav-button" data-page="solutions">Solutions</a>
-                    <a href="#about" class="top-nav-link nav-button" data-page="about">About</a>
+        <!-- Futuristic Floating Header -->
+        <header id="main-header" class="fixed top-0 left-0 right-0 z-50">
+            <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+                <img class="logo-glow" src="https://i.ibb.co/XkKKnhY7/elogo.png" alt="YXM Digital Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x40/0B0D0E/ffffff?text=YXM';">
+
+                <div class="hidden md:flex items-center space-x-10 text-base font-medium">
+                    <a href="#home" class="top-nav-link nav-button transition-all duration-300" data-page="home" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-blue-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Home</a>
+                    <a href="#yxm-tools" class="top-nav-link nav-button transition-all duration-300" data-page="yxm-tools" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-yellow-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">YXM Tools</a>
+                    <a href="#tools" class="top-nav-link nav-button transition-all duration-300" data-page="tools" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-red-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Best AI Tools</a>
+                    <a href="#submit-challenge" class="top-nav-link nav-button transition-all duration-300" data-page="submit-challenge" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-green-end)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Submit Challenge</a>
                 </div>
-                <a href="https://wa.me/254110013030" target="_blank" class="hidden md:inline-block bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:scale-105">💬 Get Started</a>
+
+                <a href="https://taknetwork.online" target="_blank" class="hidden md:inline-block font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-500 transform hover:scale-110" style="background: linear-gradient(135deg, #00ff88, #b45aff); color: white; box-shadow: 0 10px 40px rgba(0, 255, 136, 0.4), 0 0 60px rgba(180, 90, 255, 0.3);">
+                    Tak Network →
+                </a>
             </nav>
         </header>
 
@@ -333,84 +575,96 @@
             
             <!-- PAGE: Home -->
             <section id="home" class="page-section">
-                <div class="min-h-screen flex items-center justify-center">
-                    <div class="container-box text-center p-8 md:p-16">
-                        <!-- Trust Badges -->
-                        <div class="flex flex-wrap justify-center gap-4 mb-8">
-                            <div class="trust-badge">
-                                <span>💡</span>
-                                <span>Affordable Solutions</span>
-                            </div>
-                            <div class="trust-badge">
-                                <span>🛠️</span>
-                                <span>Built for Real Problems</span>
-                            </div>
-                            <div class="trust-badge">
-                                <span>🚀</span>
-                                <span>Fast Implementation</span>
-                            </div>
+                <div class="min-h-screen flex items-center justify-center py-20">
+                    <div class="container-box text-center p-12 md:p-20 max-w-6xl mx-auto">
+                        <!-- Hero Title -->
+                        <div class="mb-10">
+                            <h1 class="font-display text-6xl md:text-7xl lg:text-9xl tracking-tight leading-tight mb-8">
+                                <span class="text-gradient">Best AI Tools</span><br>
+                                <span class="text-gradient-blue">Worldwide</span>
+                            </h1>
+                            <div class="h-1.5 w-40 mx-auto rounded-full" style="background: linear-gradient(90deg, var(--glow-blue-start), var(--glow-yellow-start), var(--glow-red-start)); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);"></div>
                         </div>
 
-                        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white gradient-text-hover">From Spark To Scale.<br><span class="text-gradient">Instantly.</span></h1>
-                        <p class="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-gray-400">Affordable AI tools and digital solutions that solve real problems. We believe technology should be accessible to everyone, not just big corporations.</p>
+                        <p class="mt-14 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed" style="color: rgba(255, 255, 255, 0.75);">
+                            Discover top AI tools from around the world<br class="hidden md:block">
+                            <span class="text-gradient-neon">+ YXM Tools</span> - powerful, easy-to-use solutions
+                        </p>
 
-                        <!-- Urgency Element -->
-                        <div class="mt-8 p-4 bg-gradient-to-r from-emerald-900/20 to-emerald-800/20 border border-emerald-500/30 rounded-lg max-w-md mx-auto">
-                            <div class="flex items-center justify-center gap-2 text-emerald-400 font-semibold">
-                                <span class="animate-pulse">🔥</span>
-                                <span>LIMITED TIME: Free consultation this month!</span>
-                            </div>
-                        </div>
-
-                        <!-- Value Proposition -->
-                        <div class="mt-8 flex justify-center items-center gap-8 text-sm text-gray-400">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-emerald-400 mb-1">💰</div>
-                                <div>Budget-Friendly</div>
-                            </div>
-                            <div class="w-px h-8 bg-gray-700"></div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-emerald-400 mb-1">🎯</div>
-                                <div>Problem-Focused</div>
-                            </div>
-                            <div class="w-px h-8 bg-gray-700"></div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-emerald-400 mb-1">⚡</div>
-                                <div>Quick Results</div>
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a href="https://wa.me/254110013030?text=Hi! I'd like to discuss my project requirements and get a free consultation." target="_blank" class="bg-emerald-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 text-lg inline-block transform hover:scale-105 pulse-glow">
-                                💬 Get FREE Consultation (Worth $500)
+                        <!-- CTA Buttons with Gradient Glows -->
+                        <div class="mt-20 flex flex-col sm:flex-row gap-6 justify-center items-center">
+                            <a href="#yxm-tools" class="nav-button font-bold py-5 px-14 rounded-full transition-all duration-500 text-lg inline-block transform hover:scale-110 shadow-2xl" style="background: linear-gradient(135deg, var(--glow-yellow-start), var(--glow-green-end)); color: #000; box-shadow: 0 15px 50px rgba(255, 235, 59, 0.4);" data-page="yxm-tools">
+                                YXM Tools →
                             </a>
-                            <a href="#yxm-tools" class="nav-button border-2 border-emerald-600 text-emerald-400 font-bold py-4 px-8 rounded-lg hover:bg-emerald-600 hover:text-white transition-all duration-300 text-lg inline-block" data-page="yxm-tools">
-                                🚀 Explore Our Tools
+                            <a href="#tools" class="nav-button border-2 font-bold py-5 px-14 rounded-full transition-all duration-500 text-lg inline-block transform hover:scale-110" style="border-color: var(--glow-blue-start); color: var(--glow-blue-start); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);" data-page="tools" onmouseover="this.style.boxShadow='0 15px 50px rgba(0, 212, 255, 0.5)'" onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 212, 255, 0.2)'">
+                                Best AI Tools →
+                            </a>
+                            <a href="#submit-challenge" class="nav-button border-2 font-bold py-5 px-14 rounded-full transition-all duration-500 text-lg inline-block transform hover:scale-110" style="border-color: var(--glow-red-start); color: var(--glow-red-start); box-shadow: 0 10px 30px rgba(255, 8, 68, 0.2);" data-page="submit-challenge" onmouseover="this.style.boxShadow='0 15px 50px rgba(255, 8, 68, 0.5)'" onmouseout="this.style.boxShadow='0 10px 30px rgba(255, 8, 68, 0.2)'">
+                                Submit Challenge →
                             </a>
                         </div>
 
-                        <!-- Live Users Indicator -->
-                        <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
-                            <div class="flex -space-x-2">
-                                <div class="w-8 h-8 bg-emerald-500 rounded-full border-2 border-gray-900"></div>
-                                <div class="w-8 h-8 bg-blue-500 rounded-full border-2 border-gray-900"></div>
-                                <div class="w-8 h-8 bg-purple-500 rounded-full border-2 border-gray-900"></div>
-                                <div class="w-8 h-8 bg-red-500 rounded-full border-2 border-gray-900"></div>
-                            </div>
-                            <span>347 people used our tools in the last 24 hours</span>
-                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <!-- Managed by -->
+                        <div class="mt-20 space-y-4" style="color: rgba(255, 255, 255, 0.4);">
+                            <p class="text-lg">Managed by <span class="text-gradient-neon font-semibold">Sir Newson</span> | Powered by <span class="text-gradient-fire font-semibold">BIOS Studios</span></p>
+                            <p class="text-sm">Linked with <a href="https://taknetwork.online" target="_blank" class="text-gradient-blue underline transition-all" onmouseover="this.style.textShadow='0 0 15px var(--glow-blue-start)'" onmouseout="this.style.textShadow='none'">Tak Network</a></p>
                         </div>
                     </div>
                 </div>
-                <!-- YXM Toolkit Preview -->
+            </section>
+
+            <!-- PAGE: Submit Challenge -->
+            <section id="submit-challenge" class="page-section section-spacing">
+                <div class="min-h-screen flex items-center justify-center py-20">
+                    <div class="container-box p-12 md:p-16 max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight mb-6">
+                                <span class="text-gradient">Submit Your Challenge</span>
+                            </h1>
+                            <div class="h-1 w-24 mx-auto rounded-full mb-8" style="background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));"></div>
+                            <p class="text-xl leading-relaxed" style="color: rgba(255, 255, 255, 0.6);">
+                                Got a problem that needs a digital solution? Share your challenge with us
+                            </p>
+                        </div>
+
+                        <!-- Challenge Form -->
+                        <form id="challengeForm" class="space-y-8" style="position: relative; z-index: 10;">
+                            <div>
+                                <label class="block mb-3 font-semibold text-lg" style="color: rgba(255, 255, 255, 0.9);">Your Name</label>
+                                <input type="text" id="challengeName" required class="w-full rounded-2xl px-6 py-4 text-lg transition-all duration-300 focus:outline-none" style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 255, 255, 0.1); color: white; position: relative; z-index: 10; pointer-events: auto;" placeholder="Enter your name" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.1)'">
+                            </div>
+
+                            <div>
+                                <label class="block mb-3 font-semibold text-lg" style="color: rgba(255, 255, 255, 0.9);">Your Challenge</label>
+                                <textarea id="challengeText" required rows="7" class="w-full rounded-2xl px-6 py-4 text-lg transition-all duration-300 focus:outline-none resize-none" style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 255, 255, 0.1); color: white; position: relative; z-index: 10; pointer-events: auto;" placeholder="Describe your challenge or problem in detail..." onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.1)'"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full font-bold py-5 px-8 rounded-full transition-all duration-300 text-lg transform hover:scale-105 shadow-xl" style="background: linear-gradient(120deg, var(--color-primary), var(--color-secondary)); color: white;">
+                                Send Challenge via WhatsApp →
+                            </button>
+
+                            <p class="text-center text-sm" style="color: rgba(255, 255, 255, 0.4);">
+                                Your message will be sent directly to <span style="color: var(--color-primary);">Sir Newson</span> via WhatsApp (+254702480771)
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE: YXM Tools -->
+            <section id="yxm-tools" class="page-section section-spacing">
                 <div class="py-20">
-                    <div class="text-center mb-12">
-                        <h2 class="font-display text-3xl md:text-5xl tracking-tight">Our Hero Tools</h2>
-                        <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Our most popular tools that help businesses save time and money with simple, affordable solutions.</p>
+                    <div class="text-center mb-20">
+                        <h1 class="font-display text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight mb-6">
+                            YXM <span class="text-gradient">Tools</span>
+                        </h1>
+                        <div class="h-1 w-24 mx-auto rounded-full mb-8" style="background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));"></div>
+                        <p class="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto" style="color: rgba(255, 255, 255, 0.7);">
+                            Powerful, easy-to-use tools built by <span style="color: var(--color-primary);">Sir Newson</span> & <span style="color: var(--color-secondary);">BIOS Studios</span>
+                        </p>
                     </div>
 
-                    <!-- Hero Tools Focus Section -->
+                    <!-- YXM Tools Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
                         <!-- Hero Tool 1: Quote Generator -->
                         <div class="container-box p-8 hover:scale-105 transition-all duration-300 relative border-2 border-emerald-500/50">
@@ -553,325 +807,63 @@
                 <div class="py-20 md:py-24">
                     <div class="text-center mb-20">
                         <h2 class="font-display text-4xl md:text-6xl tracking-tight">Digital Insights</h2>
-                        <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto">Exploring the intersection of AI, business, and real-world problem solving from Nairobi to the world.</p>
+                        <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto">Exploring the intersection of AI, business, and real-world problem solving. All insights from <a href="https://taknetwork.online" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors">Tak Network</a>.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         <!-- Article 1 -->
-                        <div class="container-box p-8 hover:bg-white/5 transition-all duration-300">
+                        <a href="https://taknetwork.online" target="_blank" class="container-box p-8 hover:bg-white/5 transition-all duration-300 hover:scale-105 block">
                             <div class="bg-emerald-900/50 p-3 rounded-xl w-fit mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                             </div>
-                            <h3 class="font-display text-2xl mb-4">The Future of Digital Solutions in Africa</h3>
+                            <h3 class="font-display text-2xl mb-4 text-white">The Future of Digital Solutions in Africa</h3>
                             <p class="text-gray-400 mb-6">How AI-powered tools are transforming traditional businesses across Kenya and beyond, creating opportunities for innovation and growth.</p>
                             <div class="flex items-center text-sm text-gray-500">
                                 <span>5 min read</span>
                                 <span class="mx-2">•</span>
                                 <span>Business</span>
+                                <span class="mx-2">•</span>
+                                <span class="text-emerald-400">Tak Network →</span>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Article 2 -->
-                        <div class="container-box p-8 hover:bg-white/5 transition-all duration-300">
+                        <a href="https://taknetwork.online" target="_blank" class="container-box p-8 hover:bg-white/5 transition-all duration-300 hover:scale-105 block">
                             <div class="bg-emerald-900/50 p-3 rounded-xl w-fit mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
                             </div>
-                            <h3 class="font-display text-2xl mb-4">From Problem to Solution: The YXM Process</h3>
+                            <h3 class="font-display text-2xl mb-4 text-white">From Problem to Solution: The YXM Process</h3>
                             <p class="text-gray-400 mb-6">Our step-by-step approach to identifying real-world challenges and creating custom digital solutions that actually work.</p>
                             <div class="flex items-center text-sm text-gray-500">
                                 <span>7 min read</span>
                                 <span class="mx-2">•</span>
                                 <span>Process</span>
+                                <span class="mx-2">•</span>
+                                <span class="text-emerald-400">Tak Network →</span>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Article 3 -->
-                        <div class="container-box p-8 hover:bg-white/5 transition-all duration-300">
+                        <a href="https://taknetwork.online" target="_blank" class="container-box p-8 hover:bg-white/5 transition-all duration-300 hover:scale-105 block">
                             <div class="bg-emerald-900/50 p-3 rounded-xl w-fit mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                             </div>
-                            <h3 class="font-display text-2xl mb-4">Building Tools That Matter</h3>
+                            <h3 class="font-display text-2xl mb-4 text-white">Building Tools That Matter</h3>
                             <p class="text-gray-400 mb-6">Why we focus on creating minimal, powerful tools that solve specific problems rather than complex platforms that try to do everything.</p>
                             <div class="flex items-center text-sm text-gray-500">
                                 <span>4 min read</span>
                                 <span class="mx-2">•</span>
                                 <span>Design</span>
+                                <span class="mx-2">•</span>
+                                <span class="text-emerald-400">Tak Network →</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="text-center mt-12">
-                        <p class="text-gray-400 text-lg">More insights coming soon...</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PAGE: YXM Tools -->
-            <section id="yxm-tools" class="page-section">
-                <div class="pt-16">
-                    <div class="text-center mb-16">
-                        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white">YXM Digital <span class="text-gradient">Toolkit</span></h1>
-                        <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-gray-400">Our signature collection of AI-powered tools designed to solve real-world problems. Each tool is crafted with precision, simplicity, and power in mind. From Nairobi to the world - these tools digitize the challenges you face daily.</p>
-                    </div>
-
-                    <!-- Statistics -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-20">
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">11+</div>
-                            <p class="text-gray-400">Active Tools</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">10K+</div>
-                            <p class="text-gray-400">Users Served</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">24/7</div>
-                            <p class="text-gray-400">Availability</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">100%</div>
-                            <p class="text-gray-400">Free Access</p>
-                        </div>
-                    </div>
-
-                    <!-- YXM Tools Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
-
-                        <!-- Tool: Quote Generator -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                </div>
-                                <span class="text-xs bg-emerald-900/30 text-emerald-400 px-3 py-1 rounded-full">CONTENT</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Quote Generator</h3>
-                            <p class="text-gray-400 mb-6">AI-powered content and copy generation tool. Create engaging quotes, social media posts, and marketing copy in seconds.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Social Media Quotes</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Marketing Copy</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Custom Templates</span><span>✓</span></div>
-                            </div>
-                            <a href="https://quote.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: Loop Creator -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                </div>
-                                <span class="text-xs bg-purple-900/30 text-purple-400 px-3 py-1 rounded-full">VIDEO</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Loop Creator</h3>
-                            <p class="text-gray-400 mb-6">Create mesmerizing AI-powered video loops for social media, presentations, and digital art projects.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Seamless Loops</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Multiple Formats</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• HD Export</span><span>✓</span></div>
-                            </div>
-                            <a href="https://loop.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: Thumbnail Maker -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                </div>
-                                <span class="text-xs bg-blue-900/30 text-blue-400 px-3 py-1 rounded-full">DESIGN</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Thumbnail Maker</h3>
-                            <p class="text-gray-400 mb-6">Generate eye-catching AI thumbnails for YouTube, social media, and digital content that drive clicks and engagement.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• YouTube Optimized</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Custom Text</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Multiple Styles</span><span>✓</span></div>
-                            </div>
-                            <a href="https://thumbnail.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: Smart Clock -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                </div>
-                                <span class="text-xs bg-orange-900/30 text-orange-400 px-3 py-1 rounded-full">PRODUCTIVITY</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Smart Clock</h3>
-                            <p class="text-gray-400 mb-6">AI-enhanced productivity clock with focus timers, world time zones, and smart scheduling features.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Pomodoro Timer</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• World Clocks</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Smart Alerts</span><span>✓</span></div>
-                            </div>
-                            <a href="https://clock.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: QR Generator -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-6l3-3h9l3 3v6zM7 8h10v10H7V8z" /></svg>
-                                </div>
-                                <span class="text-xs bg-gray-700/30 text-gray-400 px-3 py-1 rounded-full">UTILITY</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">QR Generator</h3>
-                            <p class="text-gray-400 mb-6">Create custom QR codes for websites, contact info, WiFi passwords, and more with smart styling options.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Multiple Types</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Custom Colors</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• High Resolution</span><span>✓</span></div>
-                            </div>
-                            <a href="https://qrcode.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: Solitaire -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                                </div>
-                                <span class="text-xs bg-red-900/30 text-red-400 px-3 py-1 rounded-full">GAME</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Solitaire</h3>
-                            <p class="text-gray-400 mb-6">Classic solitaire game with modern design, multiple variants, and progress tracking for mental breaks.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Klondike Classic</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Statistics</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Auto-Save</span><span>✓</span></div>
-                            </div>
-                            <a href="https://solitaire.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Additional Tools Row -->
-                        <!-- Tool: Books Platform -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                                </div>
-                                <span class="text-xs bg-indigo-900/30 text-indigo-400 px-3 py-1 rounded-full">READING</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Books Platform</h3>
-                            <p class="text-gray-400 mb-6">AI-powered book discovery, reading tracker, and personalized recommendations for digital literature.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Book Discovery</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Reading Tracker</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• AI Recommendations</span><span>✓</span></div>
-                            </div>
-                            <a href="https://books.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: AI Data -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                                </div>
-                                <span class="text-xs bg-teal-900/30 text-teal-400 px-3 py-1 rounded-full">DATA</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">QR Generator</h3>
-                            <p class="text-gray-400 mb-6">Upload datasets and get instant AI-powered insights, visualizations, and business intelligence reports.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• CSV/Excel Upload</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Auto Visualizations</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Smart Insights</span><span>✓</span></div>
-                            </div>
-                            <a href="https://aidata.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: YouTube Captions -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1h4z" /></svg>
-                                </div>
-                                <span class="text-xs bg-red-600/30 text-red-400 px-3 py-1 rounded-full">YOUTUBE</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Caption Extractor</h3>
-                            <p class="text-gray-400 mb-6">Extract, download, and format YouTube video captions for content repurposing and accessibility.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Auto-Extract</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Multiple Formats</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Bulk Processing</span><span>✓</span></div>
-                            </div>
-                            <a href="https://youtubecaptions.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- More tools continue... -->
-                        <!-- Tool: Visual Creator -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                </div>
-                                <span class="text-xs bg-pink-900/30 text-pink-400 px-3 py-1 rounded-full">VISUAL</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Visual Creator</h3>
-                            <p class="text-gray-400 mb-6">Generate stunning visuals, social media graphics, and marketing materials with AI-powered design tools.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Social Graphics</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Brand Templates</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Custom Sizes</span><span>✓</span></div>
-                            </div>
-                            <a href="https://visuals.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-
-                        <!-- Tool: Captions Master -->
-                        <div class="container-box p-8 group hover:scale-105 transition-all duration-500">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="bg-emerald-900/50 p-4 rounded-xl group-hover:scale-110 transition-transform pulse-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                                </div>
-                                <span class="text-xs bg-yellow-700/30 text-yellow-400 px-3 py-1 rounded-full">WRITING</span>
-                            </div>
-                            <h3 class="font-display text-2xl text-white mb-3">Captions Master</h3>
-                            <p class="text-gray-400 mb-6">Professional caption and subtitle generator with timing, formatting, and multi-language support.</p>
-                            <div class="space-y-2 mb-6 text-sm text-gray-500">
-                                <div class="flex justify-between"><span>• Auto-Timing</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Multi-Language</span><span>✓</span></div>
-                                <div class="flex justify-between"><span>• Export Formats</span><span>✓</span></div>
-                            </div>
-                            <a href="https://captionsmaster.yxm.digital" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
-                                Launch Tool →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Call to Action -->
-                    <div class="text-center mb-20">
-                        <div class="container-box p-12 max-w-4xl mx-auto">
-                            <h2 class="font-display text-3xl md:text-4xl mb-6">Need a Custom Tool?</h2>
-                            <p class="text-xl text-gray-300 mb-8">
-                                These are just the beginning. If you have a specific problem that needs a digital solution, let's build a custom tool together.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <a href="https://wa.me/254110013030" target="_blank" class="bg-emerald-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 text-lg inline-block transform hover:scale-105">💬 Request Custom Tool</a>
-                                <a href="#solutions" class="nav-button border border-emerald-600 text-emerald-400 font-bold py-4 px-10 rounded-lg hover:bg-emerald-600 hover:text-white transition-all duration-300 text-lg inline-block" data-page="solutions">View Solutions →</a>
-                            </div>
-                        </div>
+                        <a href="https://taknetwork.online" target="_blank" class="inline-block bg-gradient-to-r from-emerald-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-lg hover:from-emerald-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                            More Insights on Tak Network →
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1560,13 +1552,18 @@
             <a href="#home" data-page="home" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg><span class="text-xs font-medium">Home</span></a>
             <a href="#yxm-tools" data-page="yxm-tools" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg><span class="text-xs font-medium">YXM</span></a>
             <a href="#tools" data-page="tools" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span class="text-xs font-medium">AI Tools</span></a>
-            <a href="#solutions" data-page="solutions" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg><span class="text-xs font-medium">Solutions</span></a>
+            <a href="#digital-insights" data-page="digital-insights" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg><span class="text-xs font-medium">Insights</span></a>
             <a href="#about" data-page="about" class="nav-button nav-link p-2 flex flex-col items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-xs font-medium">About</span></a>
         </div>
     </nav>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // --- PURE DARK MODE - NO LIGHT MODE ---
+
             // --- DATA ---
             const featuredToolsData = [
                 { name: 'ChatGPT', category: 'Chat', description: 'Conversational AI for a wide range of tasks.', url: 'https://chat.openai.com/' },
@@ -1728,6 +1725,50 @@
             function animate() { requestAnimationFrame(animate); if (!renderer || !scene || !camera || !particles) return; const time = Date.now() * 0.00003; particles.rotation.x = time * 0.25; particles.rotation.y = time * 0.5; renderer.render(scene, camera); }
             initThreeJS();
             animate();
+
+            // --- SCROLL TO TOP BUTTON ---
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // --- CHALLENGE FORM WHATSAPP INTEGRATION ---
+            const challengeForm = document.getElementById('challengeForm');
+            if (challengeForm) {
+                challengeForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('challengeName').value;
+                    const challenge = document.getElementById('challengeText').value;
+
+                    const message = `🚀 *New Challenge Submission*\n\n` +
+                                  `*From:* ${name}\n\n` +
+                                  `*Challenge:*\n${challenge}\n\n` +
+                                  `---\nSent via YXM Digital`;
+
+                    const whatsappURL = `https://wa.me/254702480771?text=${encodeURIComponent(message)}`;
+
+                    window.open(whatsappURL, '_blank');
+
+                    // Reset form after submission
+                    challengeForm.reset();
+
+                    // Optional: Show success message
+                    alert('Opening WhatsApp... Your challenge will be sent to Sir Newson!');
+                });
+            }
         });
     </script>
 
