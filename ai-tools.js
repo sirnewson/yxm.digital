@@ -150,10 +150,10 @@ const tools = [
   { name: 'Submind', category: 'Productivity', description: 'Privacy-first note-taking with AI.', url: 'https://submind.ai' },
   { name: 'Chopdi AI', category: 'Productivity', description: 'Note-taking with retrieval and summaries.', url: 'https://chopdi.ai' },
   { name: 'Zapier', category: 'Productivity', description: 'Connect and automate workflows.', url: 'https://zapier.com' },
-  { name: 'Quickfix AI', category: 'Productivity', description: 'Context-aware summaries anywhere.', url: 'https://www.grammarly.com' },
-  { name: 'Cellect', category: 'Productivity', description: 'A tool for spreadsheet data cleanup, extraction, and analysis.', url: '' },
-  { name: 'ScreenApp', category: 'Productivity', description: 'A tool that records, transcribes, summarizes, and analyzes audio/video content.', url: '' },
-  { name: 'Cubeo AI', category: 'Productivity', description: 'A nocode platform to build and deploy custom AI assistants using company data.', url: '' },
+  { name: 'Quickfix AI', category: 'Productivity', description: 'Context-aware summaries anywhere.', url: 'https://quickfix.ai' },
+  { name: 'Cellect', category: 'Productivity', description: 'A tool for spreadsheet data cleanup, extraction, and analysis.', url: 'https://www.cellect.ai/' },
+  { name: 'ScreenApp', category: 'Productivity', description: 'A tool that records, transcribes, summarizes, and analyzes audio/video content.', url: 'https://screenapp.io/' },
+  { name: 'Cubeo AI', category: 'Productivity', description: 'A nocode platform to build and deploy custom AI Agents using company data.', url: 'https://www.cubeo.ai/' },
   { name: 'Komos AI', category: 'Productivity', description: 'A tool to turn screen demos into automated workflows.', url: '' },
   { name: 'Liminary', category: 'Productivity', description: 'A browser extension that captures, organizes, and recalls information from various sources to find and synthesize insights.', url: '' },
   { name: 'Mem0', category: 'Productivity', description: 'A tool that adds long-term, personalized memory to AI apps and maintain context across sessions.', url: '' },
@@ -610,5 +610,6 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = aiTools;
 }
+
 
 export default aiTools;
