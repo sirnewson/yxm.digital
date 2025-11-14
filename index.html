@@ -44,7 +44,7 @@
       "name": "YXM Digital",
       "url": "https://yxm.digital",
       "logo": "https://i.ibb.co/XkKKnhY7/elogo.png",
-      "description": "AI-powered  and custom digital solutions from Nairobi, Kenya",
+      "description": "AI-powered tools and custom digital solutions from Nairobi, Kenya",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nairobi",
@@ -520,15 +520,22 @@
         
         .tool-gradient-card {
             position: relative;
-            background-color: rgba(11, 13, 14, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(11, 13, 14, 0.8) !important;
+            border: 2px solid rgba(14, 138, 106, 0.5) !important;
             border-radius: 1.5rem;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block; /* Make the card a block-level element for the link */
+            display: block !important;
+            min-height: 120px;
+            padding: 1rem !important;
+            margin: 0.5rem !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+            color: white !important;
         }
         .tool-gradient-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-        .tool-content { position: relative; z-index: 2; padding: 1.5rem; }
+        .tool-content { position: relative; z-index: 2; padding: 1.5rem; color: white !important; }
 
         .top-nav-link { color: #F6F7F9; transition: color 0.3s; }
         .top-nav-link:hover, .top-nav-link.active { color: #0E8A6A; }
@@ -560,7 +567,7 @@
 
                 <div class="hidden md:flex items-center space-x-10 text-base font-medium">
                     <a href="#home" class="top-nav-link nav-button transition-all duration-300" data-page="home" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-blue-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Home</a>
-                    <a href="#yxm-" class="top-nav-link nav-button transition-all duration-300" data-page="yxm-tools" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-yellow-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">YXM Tools</a>
+                    <a href="#yxm-tools" class="top-nav-link nav-button transition-all duration-300" data-page="yxm-tools" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-yellow-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">YXM Tools</a>
                     <a href="#tools" class="top-nav-link nav-button transition-all duration-300" data-page="tools" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-red-start)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Best AI Tools</a>
                     <a href="#submit-challenge" class="top-nav-link nav-button transition-all duration-300" data-page="submit-challenge" style="color: rgba(255, 255, 255, 0.7);" onmouseover="this.style.color='var(--glow-green-end)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">Submit Challenge</a>
                 </div>
@@ -878,7 +885,7 @@
                 <!-- Featured Tools -->
                 <div class="mb-20">
                     <h2 class="font-display text-3xl md:text-4xl tracking-tight mb-8">Featured Tools</h2>
-                    <div id="featuredToolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div id="featuredToolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; width: 100%; margin-top: 1rem;">
                         <!-- Featured tool cards will be dynamically inserted here -->
                     </div>
                 </div>
@@ -887,7 +894,7 @@
                     <input type="search" id="searchInput" placeholder="Search all tools... (e.g., 'video', 'code')" class="w-full bg-gray-200 border border-transparent rounded-lg px-4 py-3 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-600">
                     <details class="mt-4"><summary class="cursor-pointer text-gray-400 hover:text-white">Filter by Category</summary><div id="categoryFilters" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 text-sm"></div></details>
                 </div>
-                <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="display: grid !important; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; width: 100%; margin-top: 1rem;"></div>
                 <div id="noResults" class="hidden text-center py-16"><p class="text-xl text-gray-400">No tools found.</p></div>
             </section>
 
@@ -1560,91 +1567,88 @@
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // --- PURE DARK MODE - NO LIGHT MODE ---
+    <script type="module">
+        (async function() {
+            // Load aiTools: prefer ES module when served over http/https; when opened via file:// use the UMD fallback
+            let aiTools;
 
-            // --- DATA ---
-            const featuredToolsData = [
-                { name: 'ChatGPT', category: 'Chat', description: 'Conversational AI for a wide range of tasks.', url: 'https://chat.openai.com/' },
-                { name: 'Midjourney', category: 'Generative Art', description: 'Create high-quality images from textual descriptions.', url: 'https://www.midjourney.com/' },
-                { name: 'Canva', category: 'Inspiration', description: 'Online design platform with AI-powered features.', url: 'https://www.canva.com/' },
-                { name: 'Notion', category: 'Productivity', description: 'All-in-one workspace with integrated AI.', url: 'https://www.notion.so/' },
-                { name: 'GitHub Copilot', category: 'Generative Code', description: 'AI pair programmer for developers.', url: 'https://github.com/features/copilot' },
-                { name: 'Grammarly', category: 'Copywriting', description: 'AI-powered writing assistant.', url: 'https://www.grammarly.com/' },
-                { name: 'DALL-E 3', category: 'Generative Art', description: 'Generate images from text, by OpenAI.', url: 'https://openai.com/dall-e-3' },
-                { name: 'Runway', category: 'Generative Video', description: 'AI video creation and editing suite.', url: 'https://runwayml.com/' },
-                { name: 'ElevenLabs', category: 'Text-To-Speech', description: 'Lifelike text-to-speech and voice cloning.', url: 'https://elevenlabs.io/' },
-                { name: 'Zapier', category: 'Productivity', description: 'Automate workflows between your web apps.', url: 'https://zapier.com/' },
-                { name: 'Synthesia', category: 'Avatar', description: 'Create AI videos with realistic avatars.', url: 'https://www.synthesia.io/' },
-                { name: 'Descript', category: 'Video Editing', description: 'Edit video and audio as easily as a doc.', url: 'https://www.descript.com/' },
-                { name: 'Perplexity AI', category: 'Research', description: 'Conversational search engine.', url: 'https://www.perplexity.ai/' },
-                { name: 'Otter.ai', category: 'Speech-To-Text', description: 'AI meeting assistant that records and transcribes.', url: 'https://otter.ai/' },
-                { name: 'Luma AI', category: 'Generative Art', description: 'Create realistic 3D models from video.', url: 'https://lumalabs.ai/' },
-                { name: 'Jasper', category: 'Copywriting', description: 'AI content platform for marketing teams.', url: 'https://www.jasper.ai/' },
-                { name: 'Tome', category: 'Productivity', description: 'AI-powered storytelling and presentation tool.', url: 'https://tome.app/' },
-                { name: 'HeyGen', category: 'Generative Video', description: 'AI video generation with avatars and voice cloning.', url: 'https://www.heygen.com/' },
-                { name: 'Poe by Quora', category: 'Aggregators', description: 'Access multiple AI models in one app.', url: 'https://poe.com/' },
-                { name: 'Beautiful.ai', category: 'Inspiration', description: 'AI presentation maker that designs for you.', url: 'https://www.beautiful.ai/' }
-            ];
+            async function loadUmdFallback() {
+                return new Promise((resolve, reject) => {
+                    try {
+                        if (window.aiTools) return resolve(window.aiTools);
+                        const s = document.createElement('script');
+                        s.src = './ai-tools.umd.js';
+                        s.onload = () => resolve(window.aiTools);
+                        s.onerror = () => reject(new Error('Failed to load ai-tools.umd.js'));
+                        document.head.appendChild(s);
+                    } catch (e) {
+                        reject(e);
+                    }
+                });
+            }
 
-            const toolsData = 
-  { name: 'Movable Type', category: 'Copywriting', description: 'A platform to generate book manuscripts from ideas and match your writing style.', url: 'https://movabletype.ai' },
-  { name: 'Enjo.ai', category: 'Productivity', description: 'Handles support requests by integrating with workplace tools for context-aware responses.', url: 'https://enjo.ai' },
-  { name: 'Memara', category: 'Productivity', description: 'Gives AI agents persistent memory across multiple conversations.', url: 'https://memara.ai' },
-  { name: 'StatPecker', category: 'Productivity', description: 'Transforms raw data into charts and infographics.', url: 'https://statpecker.com' },
-  { name: 'WisePPC', category: 'Marketing', description: 'Optimizes Amazon advertising campaigns using analytics.', url: 'https://wiseppc.ai' },
-  { name: 'Plotaverse', category: 'Generative Video', description: 'Transforms static images into animated looping videos with effects.', url: 'https://plotaverse.com' },
-  { name: 'FrameZero', category: 'Video Editing', description: 'A tool to sketch, animate, and share ideas online.', url: 'https://framezero.ai' },
-  { name: 'Open Lovable', category: 'Generative Code', description: 'A tool to convert websites into React applications.', url: 'https://openlovable.com' },
-  { name: 'Profound', category: 'Marketing', description: 'Monitors and optimizes brand representation in AI search results.', url: 'https://profound.ai' },
-  { name: 'Copilot 3D', category: 'Generative Art', description: 'A tool to convert 2D images into 3D models.', url: 'https://copilot3d.ai' },
-  { name: 'Thumbler AI', category: 'Social Media', description: 'Generates optimized YouTube thumbnails from text prompts.', url: 'https://thumbler.ai' },
-  { name: 'KittenTTS', category: 'Text-To-Speech', description: 'Convert text to speech with minimal computing resources.', url: 'https://kittentts.com' },
-  { name: 'Dreamcore', category: 'Gaming', description: 'Create and share mobile games from text prompts.', url: 'https://dreamcore.ai' },
-  { name: 'Endex', category: 'Finance', description: 'A tool for financial data analysis in Excel.', url: 'https://endex.ai' },
-  { name: 'LetzAI', category: 'Generative Art', description: 'Creates custom image generators trained on user-provided photos.', url: 'https://letz.ai' },
-  { name: 'Amical', category: 'Speech-To-Text', description: 'Dictate, transcribe meetings, and capture voice notes.', url: 'https://amical.ai' },
-  { name: 'DailyMe Journal', category: 'Self-Improvement', description: 'iOS journaling app to analyze emotional patterns.', url: 'https://dailyme.app' },
-  { name: 'CometAPI', category: 'Aggregators', description: 'Access and use 500+ AI models via API.', url: 'https://cometapi.com' },
-  { name: 'Ziddny', category: 'Avatar', description: 'Creates customizable AI avatars for brand communication.', url: 'https://ziddny.com' },
-  { name: 'Perso.ai', category: 'Translation', description: 'Translate and lip-sync videos in multiple languages.', url: 'https://perso.ai' },
-  { name: 'AI HomeDesign', category: 'Inspiration', description: 'Transforms room photos into customized interior design concepts.', url: 'https://aihomedesign.com' },
-  { name: 'Wondercraft', category: 'Podcasting', description: 'An audio studio to convert text into audio content.', url: 'https://wondercraft.ai' },
-  { name: 'Polygraf AI', category: 'AI Detection', description: 'Detects AI-generated or modified text in content.', url: 'https://polygraf.ai' },
-  { name: 'Vireel', category: 'Text-To-Video', description: 'A tool to create short-form videos for social media.', url: 'https://vireel.ai' },
-  { name: 'Leonardo AI', category: 'Generative Art', description: 'Create unique production-ready game assets', url: 'https://leonardo.ai' },
-  { name: 'Vibecode', category: 'Generative Code', description: 'Build mobile apps the same way you edit videos in CapCut.', url: 'https://vibecode.com' },
-  { name: 'Company Research Agent', category: 'Research', description: 'Analyzes company and industry data for research reports.', url: '#' },
-  { name: 'TheQuickAssist', category: 'Chat', description: 'Build and deploy AI chatbots for websites.', url: '#' },
-  { name: 'Daisy.so', category: 'Image Improvement', description: 'Remix, edit, and animate images and custom visual styles.', url: 'https://daisy.so' },
-  { name: 'Patter', category: 'Chat', description: 'Build AI chat agents for sales automation.', url: '#' },
-  { name: 'GetRenders', category: 'Image Improvement', description: 'Create virtual staging for real estate photos.', url: '#' },
-  { name: 'Submind', category: 'Productivity', description: 'Offline privacy-first note-taking with AI summaries.', url: '#' },
-  { name: 'Klavis AI', category: 'Automation & Agents', description: 'Connect AI agents to external platforms using MCP.', url: '#' },
-  { name: 'Yorph AI', category: 'Automation & Agents', description: 'Nocode conversational data analysis and pipelines.', url: '#' },
-  { name: 'MemMachine', category: 'Automation & Agents', description: 'Open source persistent memory layer for AI agents.', url: '#' },
-  { name: 'Vibe3D', category: 'Generative Art', description: 'Turn 3D models into renders with text-based editing.', url: '#' },
-  { name: 'Versuno AI', category: 'Prompt Guides', description: 'Organize, test, and optimize AI prompts collaboratively.', url: '#' },
-  { name: 'Kento', category: 'Automation & Agents', description: 'Cache repeated AI queries to cut costs.', url: '#' },
-  { name: 'PostEverywhere', category: 'Social Media', description: 'Create and publish content across multiple platforms.', url: '#' },
-  { name: 'Quickfix AI', category: 'Productivity', description: 'Context-aware replies and summaries in any website's textbox.', url: '#' },
-  { name: 'Picky Assist', category: 'Marketing', description: 'Manage communication across channels without code.', url: '#' },
-  { name: 'dynares', category: 'Marketing', description: 'Generate personalized landing pages, ads, and forms.', url: '#' },
-  { name: 'BrightStage AI', category: 'Marketing', description: 'Create and manage sales presentations, webinars, and follow-ups.', url: '#' },
-  { name: 'Cline', category: 'Generative Code', description: 'Open source collaborative coding agent.', url: '#' },
-  { name: 'GPTBots.ai', category: 'Automation & Agents', description: 'Build and deploy enterprise no-code AI agents.', url: '#' },
-  { name: 'iGPT', category: 'Automation & Agents', description: 'Convert emails into structured data for agents.', url: '#' },
-  { name: 'Matter AI', category: 'Generative Code', description: 'Automate code reviews, summarize changes, and find bugs.', url: '#' },
-  { name: 'Cekura', category: 'Automation & Agents', description: 'Test and monitor conversational AI agent quality.', url: '#' },
-  { name: 'RightNow AI', category: 'Generative Code', description: 'AI CUDA code editor with profiling tools.', url: '#' },
-  { name: 'Agenta', category: 'Automation & Agents', description: 'Open source LLM app development platform.', url: '#' },
-  { name: 'Keevx', category: 'Avatar', description: 'Create multilingual avatar videos with lip-sync.', url: '#' },
-  { name: 'Chopdi AI', category: 'Productivity', description: 'Note-taking workspace with retrieval and summaries.', url: '#' }
-};
+            try {
+                if (location && location.protocol === 'file:') {
+                    // Avoid noisy module import errors when opened from the filesystem
+                    aiTools = await loadUmdFallback();
+                } else {
+                    try {
+                        const mod = await import('./ai-tools.js');
+                        aiTools = (mod && (mod.default || mod.aiTools || window.aiTools)) || window.aiTools;
+                        if (!aiTools) {
+                            // Fallback to UMD if the module didn't expose the data
+                            aiTools = await loadUmdFallback();
+                        }
+                    } catch (err) {
+                        // If module import fails (CORS or network), fallback to UMD
+                        console.warn('ES module import failed, falling back to UMD:', err && err.message ? err.message : err);
+                        aiTools = await loadUmdFallback();
+                    }
+                }
+            } catch (finalErr) {
+                console.error('Could not load aiTools module or UMD fallback:', finalErr);
+            }
 
+            console.log('aiTools after load attempt:', aiTools);
 
-            // --- PAGE ROUTING ---
+            // Wrap init logic into a function and run it immediately if DOM is ready,
+            // otherwise wait for DOMContentLoaded. This prevents missing the event
+            // when the async import completes after DOMContentLoaded has already fired.
+            function initToolsUI() {
+                // create a small debug panel in the Tools section to help diagnose visibility issues
+                try {
+                    let debugEl = document.getElementById('toolsDebug');
+                    if (!debugEl) {
+                        debugEl = document.createElement('div');
+                        debugEl.id = 'toolsDebug';
+                        debugEl.style.cssText = 'position:relative; z-index:60; color:#d1fae5; background:rgba(2,6,23,0.6); border:1px dashed rgba(34,197,94,0.25); padding:8px 12px; border-radius:8px; font-size:13px; margin-bottom:12px;';
+                        const toolsContainer = document.querySelector('#tools .container-box') || document.querySelector('#tools') || document.body;
+                        if (toolsContainer && toolsContainer.insertBefore) toolsContainer.insertBefore(debugEl, toolsContainer.firstChild);
+                    }
+                    debugEl.textContent = 'Debug: aiTools=' + (aiTools ? 'present' : 'missing') + ', tools count=' + ((aiTools && Array.isArray(aiTools.tools)) ? aiTools.tools.length : 0) + ', featured fallback used=' + (typeof featuredToolsData !== 'undefined');
+                    console.info('Tools debug:', debugEl.textContent);
+                } catch (dbgErr) {
+                    console.error('Failed to create debug element', dbgErr);
+                }
+
+                // --- PURE DARK MODE - NO LIGHT MODE ---
+
+                // --- DATA ---
+                const toolsData = (aiTools && Array.isArray(aiTools.tools)) ? aiTools.tools : [];
+                const featuredToolsData = (aiTools && Array.isArray(aiTools.featured)) ? aiTools.featured : [
+                    { name: 'ChatGPT', category: 'Chat', description: 'Conversational AI for a wide range of tasks.', url: 'https://chat.openai.com/' },
+                    { name: 'Midjourney', category: 'Generative Art', description: 'Create high-quality images from textual descriptions.', url: 'https://www.midjourney.com/' },
+                    { name: 'Canva', category: 'Inspiration', description: 'Online design platform with AI-powered features.', url: 'https://www.canva.com/' },
+                    { name: 'Notion', category: 'Productivity', description: 'All-in-one workspace with integrated AI.', url: 'https://www.notion.so/' },
+                    { name: 'GitHub Copilot', category: 'Generative Code', description: 'AI pair programmer for developers.', url: 'https://github.com/features/copilot' },
+                    { name: 'Grammarly', category: 'Copywriting', description: 'AI-powered writing assistant.', url: 'https://www.grammarly.com/' },
+                    { name: 'DALL-E 3', category: 'Generative Art', description: 'Generate images from text, by OpenAI.', url: 'https://openai.com/dall-e-3' },
+                    { name: 'Runway', category: 'Generative Video', description: 'AI video creation and editing suite.', url: 'https://runwayml.com/' },
+                    { name: 'ElevenLabs', category: 'Text-To-Speech', description: 'Lifelike text-to-speech and voice cloning.', url: 'https://elevenlabs.io/' },
+                    { name: 'Zapier', category: 'Productivity', description: 'Automate workflows between your web apps.', url: 'https://zapier.com/' }
+                ];
+
+                // --- PAGE ROUTING ---
             const pageSections = document.querySelectorAll('.page-section');
             const navButtons = document.querySelectorAll('.nav-button');
 
@@ -1678,6 +1682,14 @@
             const categoryFilters = document.getElementById('categoryFilters');
             const noResults = document.getElementById('noResults');
             
+            console.log('DOM element check:', {
+                toolsGrid: !!toolsGrid,
+                featuredToolsGrid: !!featuredToolsGrid,
+                searchInput: !!searchInput,
+                categoryFilters: !!categoryFilters,
+                noResults: !!noResults
+            });
+            
             function createToolCard(tool) {
                 const card = document.createElement('a');
                 card.href = tool.url;
@@ -1689,7 +1701,11 @@
             }
             
             function renderTools(tools, gridElement) {
-                if (!gridElement) return;
+                console.log('renderTools called with', tools.length, 'tools and gridElement:', gridElement);
+                if (!gridElement) {
+                    console.error('renderTools: gridElement is null/undefined!');
+                    return;
+                }
                 gridElement.innerHTML = '';
                 if (tools.length === 0 && gridElement.id === 'toolsGrid') {
                     noResults.classList.remove('hidden');
@@ -1699,6 +1715,7 @@
                 tools.forEach(tool => {
                     gridElement.appendChild(createToolCard(tool));
                 });
+                console.log('renderTools completed: inserted', gridElement.children.length, 'cards into', gridElement.id);
             }
 
             function renderFilters() {
@@ -1724,6 +1741,28 @@
             renderFilters();
             renderTools(toolsData, toolsGrid);
             renderTools(featuredToolsData, featuredToolsGrid);
+
+            // Debug: if toolsGrid still has no children, add a fallback visible message
+            if (!toolsGrid || toolsGrid.children.length === 0) {
+                const fallbackMsg = document.createElement('div');
+                fallbackMsg.style.cssText = 'padding: 2rem; background: #dc2626; color: white; border-radius: 8px; margin: 1rem; text-align: center;';
+                fallbackMsg.innerHTML = '<strong>⚠️ Tools grid is empty or not found!</strong><br>Check console for errors. toolsGrid exists: ' + (!!toolsGrid);
+                const toolsSection = document.getElementById('tools');
+                if (toolsSection) toolsSection.appendChild(fallbackMsg);
+            }
+
+            // Update debug panel with actual DOM counts so we can see whether cards were inserted
+            try {
+                const dbg = document.getElementById('toolsDebug');
+                if (dbg) {
+                    const gridCount = toolsGrid ? toolsGrid.children.length : 0;
+                    const featuredCount = featuredToolsGrid ? featuredToolsGrid.children.length : 0;
+                    dbg.textContent = dbg.textContent + ' | rendered tools=' + gridCount + ', featured=' + featuredCount;
+                    console.info('Tools render counts -> toolsGrid:', gridCount, 'featured:', featuredCount);
+                }
+            } catch (e) {
+                console.error('Failed to update debug counts', e);
+            }
 
             // --- THREE.JS ---
             let scene, camera, renderer, particles;
@@ -1798,7 +1837,18 @@
                     alert('Opening WhatsApp... Your challenge will be sent to Sir Newson!');
                 });
             }
-        });
+            } // Close initToolsUI function
+            
+            // Wait for DOM to be fully ready before running initToolsUI
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initToolsUI, { once: true });
+            } else {
+                // DOM is already ready, call immediately
+                setTimeout(initToolsUI, 0);
+            }
+
+            // close outer async IIFE
+        })();
     </script>
 
 </body>
